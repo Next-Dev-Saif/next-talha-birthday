@@ -2,16 +2,22 @@
 import img from "../../public/banner-img.png";
 import Image from "next/image";
 import splashEggEffect from "../../public/egg.png";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import baloonImG from "../../public/Baloon.png";
 
 const SplashEgg=()=>{
 
 const ref=useRef();
 const [eggsSmashed,setEggsSmashed]=useState(0)
-const audioRef=useRef(new Audio(`/splash-sound.mp3`));
-const cheeringAudioRef=useRef(new Audio(`/applause.mp3`));
+const audioRef=useRef();
+const cheeringAudioRef=useRef();
 
+
+
+useEffect(()=>{
+  audioRef.current=new Audio(`/splash-sound.mp3`);
+  cheeringAudioRef?.current=new Audio(`/applause.mp3`)
+},[])
 
 const baloons = Array?.from({ length: 40 }, (_, index) => {
     return (
@@ -34,7 +40,7 @@ const baloons = Array?.from({ length: 40 }, (_, index) => {
 
 
  const eggSplash=(e)=>{
-if(ref.current){
+if(ref.current&&audioRef?.current&&cheeringAudioRef?.current){
     
     let eggSplashElement=document.createElement("img");
     eggSplashElement.src=splashEggEffect?.src;
