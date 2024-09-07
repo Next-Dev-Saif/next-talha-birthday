@@ -1,3 +1,4 @@
+"use client"
 import Banner from "@/ui/globas/Banner";
 import HBD from "@/ui/sections/HBD";
 import SplashEgg from "@/ui/sections/SplashEgg";
