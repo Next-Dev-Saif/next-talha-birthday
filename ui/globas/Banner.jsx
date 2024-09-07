@@ -6,8 +6,14 @@ import baloonImG from "../../public/Baloon.png";
 import { useEffect, useRef } from "react";
 
 const Banner = () => {
-  const bgAudio = useRef(new Audio(`/bg-music.mp3`));
+  const bgAudio = useRef();
+
+useEffect(()=>{
+  bgAudio.current=new Audio(`/bg-music.mp3`)
   bgAudio.current.volume=0.3;
+})
+
+ 
 
   const baloons = Array?.from({ length: 40 }, (_, index) => {
     return (
