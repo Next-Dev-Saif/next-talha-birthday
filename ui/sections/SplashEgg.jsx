@@ -16,7 +16,7 @@ const cheeringAudioRef=useRef();
 
 useEffect(()=>{
   audioRef.current=new Audio(`/splash-sound.mp3`);
-  cheeringAudioRef?.current=new Audio(`/applause.mp3`)
+  cheeringAudioRef.current=new Audio(`/applause.mp3`)
 },[])
 
 const baloons = Array?.from({ length: 40 }, (_, index) => {
