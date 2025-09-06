@@ -340,16 +340,17 @@ export default function ThreeScene() {
         mountRef.current.appendChild(renderer.domElement);
 
         // Start fireworks
-        // for (let i = 0; i < 4; i++) { // fewer initial
-        //   setTimeout(launchRandomFirework, Math.random() * 1000);
-        // }
+        for (let i = 0; i < 4; i++) { // fewer initial
+          setTimeout(launchRandomFirework, Math.random() * 1000);
+        }
 
-        // fireworkIntervalId = setInterval(() => {
-        //   if (Math.random() > 0.5) launchRandomFirework(); // less frequent
-        // }, 1200);
+        fireworkIntervalId = setInterval(() => {
+          if (Math.random() > 0.5) launchRandomFirework(); // less frequent
+        }, 1200);
 
         // Start animation
         animate();
+        clearInterval(readyCheckInterval);
 
         // Add resize listener
         window.addEventListener("resize", handleResize);
@@ -361,7 +362,7 @@ export default function ThreeScene() {
     // Cleanup
     return () => {
       clearInterval(readyCheckInterval);
-    //   if (fireworkIntervalId) clearInterval(fireworkIntervalId);
+      if (fireworkIntervalId) clearInterval(fireworkIntervalId);
       if (animationId) cancelAnimationFrame(animationId);
 
       window.removeEventListener("resize", handleResize);
