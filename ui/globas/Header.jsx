@@ -29,7 +29,7 @@ const Header = () => {
   useEffect(() => {
     const listener = () => {
       if (window.scrollY > 6) {
-        setBG("rgba(47,30,69,0.8)");
+        setBG("rgba(255,255,255,0.8)");
       } else setBG("transparent");
     };
     document.addEventListener("scroll", listener);
@@ -42,7 +42,7 @@ const Header = () => {
   return (
     <>
       <Navbar
-        className="header p-lg-5  p-3"
+        className="header p-lg-4  p-3"
         expand="md"
         style={{ background: bg }}
       >
@@ -65,10 +65,12 @@ const Header = () => {
             <NavLink
               role="button"
               onClick={() => {
-                if (navigator.clipboard) {
+               if(typeof navigator!=="undefined"){
+                if (navigator?.clipboard) {
                   navigator.clipboard.writeText(`${window.location}`);
                   alert('Link copied')
                 }
+               }
               }}
             >
               Share Link

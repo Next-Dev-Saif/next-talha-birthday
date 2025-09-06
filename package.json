@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.4",
+    "@react-three/fiber": "^9.3.0",
+    "@types/three": "^0.180.0",
     "bootstrap": "^5.3.3",
     "firebase": "^10.13.1",
     "next": "14.2.8",
@@ -19,7 +22,7 @@
     "reactstrap": "^9.2.2",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
-    "three": "^0.168.0",
+    "three": "^0.180.0",
     "yarn": "^1.22.22"
   }
 }

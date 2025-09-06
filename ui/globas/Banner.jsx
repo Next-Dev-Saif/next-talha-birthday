@@ -1,17 +1,12 @@
 "use client";
 import Image from "next/image";
-import { Card, Col, Container, Row } from "reactstrap";
-import bannerImg from "../../public/banner-img.png";
+import { Button, Card, Col, Container, Row } from "reactstrap";
+import bannerImg from "../../public/Banner.png";
 import baloonImG from "../../public/Baloon.png";
-import { useEffect, useRef } from "react";
+import MusicWave from "../sections/Wave";
+import Link from "next/link";
 
 const Banner = () => {
-  const bgAudio = useRef();
-
-useEffect(()=>{
-  bgAudio.current=new Audio(`/bg-music.mp3`)
-  bgAudio.current.volume=0.3;
-})
 
  
 
@@ -35,35 +30,37 @@ useEffect(()=>{
     );
   });
 
-  useEffect(() => {
-    document.addEventListener("mousemove", () => {
-      if (bgAudio?.current) {
-        bgAudio?.current?.play();
-      }
-    });
-  }, []);
+ 
 
   return (
-    <div className="page-section">
+    <div className="page-section banner">
       {baloons}
       <Container fluid className="position-relative" style={{ zIndex: 3 }}>
-        <Row className="justify-content-center" style={{ minHeight: "90vh" }}>
+        <MusicWave style={{bottom:0,left:0,width:"100%",zIndex:1}} className="position-absolute d-md-block d-none"/>
+        <MusicWave style={{top:0,left:0,width:"100%",zIndex:1}} className="position-absolute d-md-block d-none"/>
+        <Row className="justify-content-center g-3 flex-row-reverse flex-md-row" style={{ minHeight: "90vh" }}>
           <Col
             md={6}
             className="d-flex align-items-center  justify-content-center"
           >
             <div>
-              <h1 className="banner-title text-center mb-5">Happy Birthday </h1>
-              <h2 className="subtitle text-center m-0">
-                Happy birthday to Talha Khan Niazi
-              </h2>
-              <Image
+              <h1 className="banner-title fw-bold text-center mb-0">Happy Birthday </h1>
+              <h2 className="subtitle text-center mb-3"> Ticket : " HBDTALHA "</h2>
+             <div className="text-center"> <Link className="cta-btn btn py-3 " href={"/party"}>Join Party</Link> </div>
+              
+             
+              
+            </div>
+          </Col>
+          <Col md={6} className="d-flex align-items-center justify-content-center">
+          <Image
                 src={bannerImg}
                 height={600}
-                className="full-width object-fit-contain"
+                width={300}
+                style={{width:"100%",maxWidth:"400px",borderRadius:"1rem",zIndex:2}}
+                className="full-width h-auto  object-fit-cover position-relative"
                 alt="banner-img"
               />
-            </div>
           </Col>
         </Row>
       </Container>

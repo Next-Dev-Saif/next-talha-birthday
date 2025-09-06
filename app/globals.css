@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body{
   min-height: 100vh !important;
-  font-family: "Playwrite CU", cursive !important;
-  background: rgb(47,30,69) !important;
+  font-family: "Poppins", cursive !important;
+  background: rgb(243, 243, 244) !important;
   overflow-x: hidden  !important;
 }
 .header{
@@ -16,12 +16,12 @@ body{
 
 }
 .navbar-brand{
-  color: aliceblue !important;
+  color: rgb(154, 4, 61) !important;
   letter-spacing: 5px !important;
   font-weight: 700 !important;
 }
 .nav-link{
-  color: antiquewhite !important;
+  color: rgb(171, 10, 72) !important;
   transition: 0.3s linear all !important;
   letter-spacing: 4px !important;
 }
@@ -31,7 +31,7 @@ body{
     position: absolute !important;
     left: 0 ;
     top: 0;
-    background: rgb(47,30,69) !important;
+    background: white !important;
     height: 100vh !important;
     width: 100vw !important;
     padding: 50px !important;
@@ -40,11 +40,11 @@ body{
   }
 }
 .navbar-toggler{
-  color: white !important;
+  color: rgb(58, 0, 32) !important;
   background: white !important;
 }
 .nav-link:hover{
-  color: aliceblue !important;
+  color: rgb(83, 0, 43) !important;
 }
 
 .full-width{
@@ -62,16 +62,16 @@ body{
 }
 .title,.banner-title{
   letter-spacing: 5px !important;
-  font-size: 40px !important;
+  font-size: 4rem !important;
   line-height: 2 !important;
-  color:aliceblue !important;
+  color:rgb(172, 4, 77) !important;
   font-weight: 600 !important;
 
 }
 .subtitle{
   letter-spacing: 2px !important;
   line-height: 2 !important;
-  color: aliceblue !important;
+  color: rgb(181, 4, 81) !important;
 
 }
 
@@ -92,4 +92,24 @@ body{
 }
 @keyframes scale-in {
   from{opacity: 0; transform: scale(0,0);}
+}
+.banner{
+  background: linear-gradient(30deg,rgba(255, 255, 255, 0.436),rgba(255, 249, 254, 0.304)) !important;
+}
+.cta-btn{
+  background: linear-gradient(crimson,firebrick) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 999px !important;
+  width: 100% !important;
+  max-width: 200px !important;
+}
+.party-canvas{
+  height: 100vh !important;
+  width: 100vw !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
 }

@@ -6,12 +6,12 @@ import Image from "next/image";
 const HBD = () => {
   return (
 <div className="py-5">
-<Container fluid>
+<Container >
       <Row className="g-2">
       <Col md={6} className="d-flex align-items-center">
             <div>
-            <h3 className="title">from Mr Tiamat !</h3>
-            <h4 className="subtitle mt-4 mb-0">May this day bring all the happiness in your life ! </h4>
+            <h3 className="title mb-1">from Saif !</h3>
+            <h4 className="subtitle  mb-0">May this day bring all the happiness in your life ! </h4>
             </div>
         </Col>
         <Col md={6}>
