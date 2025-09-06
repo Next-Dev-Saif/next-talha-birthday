@@ -25,10 +25,12 @@ import {
   SphereGeometry,
   AdditiveBlending,
   Clock as ThreeClock,
+  DoubleSide,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadModel } from "./ui/three-d-comps/Model";
 import { create3DText } from "./ui/three-d-comps/Text";
+import { createDiscoWave } from "./ui/three-d-comps/DiscoWave";
 
 export default function ThreeScene() {
   const mountRef = useRef(null);
@@ -96,6 +98,21 @@ export default function ThreeScene() {
     );
     table.position.set(0, -0.35, 0);
     scene.add(table);
+
+    // Disco Beat Bars on the floor (mimicking Wave.jsx pattern)
+    const discoWave = createDiscoWave({
+      position: [0, 0, 0], // Position on the floor
+      rotation: [0, 0, 0], // No rotation needed for floor placement
+      scale: [1, 1, 1],
+      radius: 6, // Circle radius
+      barCount: 40, // Number of beat bars
+      barWidth: 0.15, // Width of each bar
+      barHeight: 0.1, // Base height of each bar
+      barDepth: 0.3, // Depth of each bar
+      speed: 0.05, // Animation speed (same as Wave.jsx)
+      maxHeight: 3 // Maximum bar height multiplier
+    });
+    scene.add(discoWave.mesh);
 
     // Fog
     const fog = new Fog(0xff00ff, 3, 100); // "magenta" → hex
@@ -313,6 +330,11 @@ export default function ThreeScene() {
         mixer.update(clock.getDelta());
       });
 
+      // Update disco wave
+      if (discoWave && discoWave.update) {
+        discoWave.update(0.016); // ~60fps delta time
+      }
+
       // Update fireworks
       for (let i = fireworks.length - 1; i >= 0; i--) {
         if (fireworks[i].update()) {
@@ -351,6 +373,8 @@ export default function ThreeScene() {
         // Start animation
         animate();
         clearInterval(readyCheckInterval);
+
+      
 
         // Add resize listener
         window.addEventListener("resize", handleResize);

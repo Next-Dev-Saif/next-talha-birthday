@@ -10,8 +10,9 @@ export default function Home() {
   return (
    <main >
      <Banner/> 
-     <HBD/>
      <PhotoGallery/>
+     <HBD/>
+   
 
    
    </main>

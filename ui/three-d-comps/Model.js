@@ -21,6 +21,7 @@ export function loadModel(
     rotation = [0, 0, 0],
     scale = [1, 1, 1],
     animationIndex = 0,
+    name="default"
   } = {}
 ) {
   const loader = new GLTFLoader();
@@ -30,6 +31,7 @@ export function loadModel(
       src,
       (gltf) => {
         const model = gltf.scene;
+        model.userData.name=name;
         model.position.set(...position);
         model.rotation.set(...rotation);
         model.scale.set(...scale);
