@@ -103,9 +103,9 @@ export default function ThreeScene() {
 
     // Banner loader function
     const loader = new TextureLoader();
-    const loadBanner = (position) => {
+    const loadBanner = (position,src) => {
       loader.load(
-        "/Banner.png",
+        src,
         (texture) => {
           const bannerGeo = new PlaneGeometry(3, 5);
           const bannerMat = new MeshBasicMaterial({ map: texture, toneMapped: false });
@@ -128,9 +128,9 @@ export default function ThreeScene() {
       );
     };
 
-    loadBanner([0, 2, -2]);
-    loadBanner([5, 2, -2]);
-    loadBanner([-5, 2, -2]);
+    loadBanner([0, 2, -2],"/Banner.png");
+    loadBanner([5, 2, -2],"/talha-photos/photo-1.jpg");
+    loadBanner([-5, 2, -2],"/talha-photos/photo-2.jpg");
 
     // Club lights
     const createClubLight = (color, x, z) => {
