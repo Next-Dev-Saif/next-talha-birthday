@@ -903,6 +903,10 @@ export default function ThreeScene() {
 
         // Add resize listener
         window.addEventListener("resize", handleResize);
+        window.addEventListener("keydown",handleResize);
+        window.addEventListener("keypress",handleResize);
+        window.addEventListener("touchstart",handleResize);
+        
       }
     };
 
