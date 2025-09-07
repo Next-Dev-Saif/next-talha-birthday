@@ -46,7 +46,7 @@ const Header = () => {
         expand="md"
         style={{ background: bg }}
       >
-        <NavbarBrand>Talha Birthday</NavbarBrand>
+        <NavbarBrand href="/">Talha Birthday</NavbarBrand>
         <NavbarToggler onClick={() => toggleNavbar()} />
 
         <Nav navbar style={{ left: expanded ? `0` : `-100%` }}>

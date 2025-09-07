@@ -26,7 +26,7 @@ const PhotoGallery = () => {
       <Container>
         <div className="gallery-header">
           <h2 className="gallery-title">Meet Talha</h2>
-          <p className="gallery-subtitle">A glimpse into wonderful moments</p>
+          <p className="gallery-subtitle">Meet the birthday boy</p>
         </div>
         
         <div className="stylish-gallery">

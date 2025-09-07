@@ -38,16 +38,20 @@ export function loadModel(
 
         let mixer = null;
         let clock = null;
+        let actions = [];
 
         if (gltf.animations && gltf.animations.length > 0) {
           mixer = new AnimationMixer(model);
           const clip =
             gltf.animations[animationIndex] || gltf.animations[0];
-          mixer.clipAction(clip).play();
+          // build actions list for external control
+          actions = gltf.animations.map((c)=> mixer.clipAction(c));
+          // play the chosen/default one initially
+          mixer.clipAction(clip).reset().play();
           clock = new Clock();
         }
 
-        resolve({ model, mixer, clock });
+        resolve({ model, mixer, clock, actions });
       },
       undefined,
       (error) => reject(error)

@@ -45,7 +45,7 @@ const Banner = () => {
           >
             <div>
               <h1 className="banner-title fw-bold text-center mb-0">Happy Birthday </h1>
-              <h2 className="subtitle text-center mb-3"> Ticket : " HBDTALHA "</h2>
+              <h2 className="subtitle text-center mb-3"> Join virtual party</h2>
              <div className="text-center"> <Link className="cta-btn btn py-3 " href={"/party"}>Join Party</Link> </div>
               
              
